@@ -16,3 +16,15 @@ Thumbs.db
 # Respaldos de bases de datos
 DB/*.sql
 DB/*.bak
+# Certificados SSL y archivos sensibles
+**/certs/
+**/*.pem
+**/*.key
+
+# Variables de entorno
+**/.env
+**/.env.*
+!.env.example
+
+# Dependencias
+**/node_modules/
