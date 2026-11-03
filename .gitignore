@@ -1,0 +1,18 @@
+
+# Dependencias
+**/node_modules/
+
+# Variables de entorno
+**/.env
+.env
+.env.*
+!.env.example
+
+# Archivos temporales
+*.log
+.DS_Store
+Thumbs.db
+
+# Respaldos de bases de datos
+DB/*.sql
+DB/*.bak
