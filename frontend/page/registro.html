@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Creá tu cuenta en Worklink para contratar servicios u ofrecer tus habilidades.">
+
+    <title>Crear cuenta | Worklink</title>
+
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/tema.css">
+
+</head>
+<body class="auth-page">
+
+    <header class="auth-header">
+        <a class="auth-logo" href="../../index.html">
+            Work<span>link</span>
+        </a>
+
+        <a class="back-link" href="../../index.html">
+            Volver al inicio
+        </a>
+    </header>
+
+    <main class="auth-layout">
+
+        <section class="auth-presentation">
+            <span class="auth-eyebrow">TU HISTORIA CON WORKLINK</span>
+
+            <h1>Las oportunidades comienzan con una conexión.</h1>
+
+            <p>
+                Creá tu cuenta para encontrar profesionales de confianza
+                o compartir tus habilidades con nuevos clientes.
+            </p>
+
+            <img
+                class="auth-image"
+                src="../img/worklink.png"
+                alt="Worklink, conectando clientes con profesionales"
+            >
+        </section>
+
+        <section class="auth-card">
+            <div class="auth-card-heading">
+                <h2>Crear cuenta</h2>
+                <p>Completá tus datos para comenzar.</p>
+            </div>
+
+            <form id="form-registro">
+
+                <div class="form-group">
+                    <label for="registro-nombre">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registro-nombre"
+                        name="nombre"
+                        placeholder="Tu nombre completo"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registro-correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registro-correo"
+                        name="correo"
+                        placeholder="nombre@correo.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registro-clave">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registro-clave"
+                        name="clave"
+                        placeholder="Mínimo 8 caracteres"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registro-rol">
+                        ¿Cómo querés usar Worklink?
+                    </label>
+
+                    <select id="registro-rol" name="rol" required>
+                        <option value="">Seleccioná una opción</option>
+                        <option value="cliente">
+                            Quiero contratar servicios
+                        </option>
+                        <option value="profesional">
+                            Quiero ofrecer mis servicios
+                        </option>
+                        <option value="ambos">
+                            Quiero hacer ambas cosas
+                        </option>
+                    </select>
+                </div>
+
+                <button class="auth-submit" type="submit">
+                    Crear mi cuenta
+                </button>
+
+                <p id="registro-mensaje" class="auth-message"
+                   role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="auth-divider">
+                <span>¿Ya tenés una cuenta?</span>
+            </div>
+
+            <a class="auth-secondary-button" href="login.html">
+                Iniciar sesión
+            </a>
+
+            <p class="auth-terms">
+                Protegé tus datos y no compartás tu contraseña con otras personas.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="auth-footer">
+        <a href="../../index.html">Worklink</a>
+        <p>Conectamos talento con oportunidades.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const rol = params.get("rol");
+
+        if (["cliente", "profesional", "ambos"].includes(rol)) {
+            document.getElementById("registro-rol").value = rol;
+        }
+    </script>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/tema.js"></script>    
+
+</body>
+</html>

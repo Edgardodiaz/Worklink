@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis solicitudes | Worklink</title>
+    <link rel="stylesheet" href="../css/solicitudes.css">
+    <link rel="stylesheet" href="../css/tema.css">
+
+</head>
+<body>
+    <header class="encabezado">
+        <a href="inicio.html" class="logo">Work<span>link</span></a>
+
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="inicio.html#profesionales">Profesionales</a>
+            <a href="mi-perfil.html">Mi perfil</a>
+        </nav>
+
+        <button id="btn-cerrar-sesion" class="btn-secundario" type="button">
+            Cerrar sesión
+        </button>
+    </header>
+
+    <main class="contenedor">
+        <section class="introduccion">
+            <span class="etiqueta">TU ACTIVIDAD</span>
+            <h1>Mis solicitudes</h1>
+            <p>Consultá tus contrataciones y gestioná los trabajos que recibís.</p>
+        </section>
+
+        <div id="mensaje-general" class="mensaje-general" role="status">
+            Cargando solicitudes...
+        </div>
+
+        <div class="pestanas">
+            <button class="pestana activa" data-filtro="todas" type="button">
+                Todas
+            </button>
+            <button class="pestana" data-filtro="enviadas" type="button">
+                Enviadas
+            </button>
+            <button class="pestana" data-filtro="recibidas" type="button">
+                Recibidas
+            </button>
+        </div>
+
+        <section id="lista-solicitudes" class="lista-solicitudes"></section>
+
+        <section id="estado-vacio" class="estado-vacio" hidden>
+            <div class="icono-vacio">📋</div>
+            <h2>No hay solicitudes para mostrar</h2>
+            <p>Cuando solicités o recibás un servicio, aparecerá aquí.</p>
+            <a href="inicio.html" class="btn-principal">Buscar profesionales</a>
+        </section>
+    </main>
+
+    <footer>
+        <a href="inicio.html" class="logo">Work<span>link</span></a>
+        <p>Conectamos personas con profesionales de confianza.</p>
+        <small>© 2026 Worklink</small>
+    </footer>
+
+    <script src="../js/solicitudes.js"></script>
+    <script src="../js/tema.js"></script>
+</body>
+</html>

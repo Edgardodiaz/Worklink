@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat | Worklink</title>
+    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="stylesheet" href="../css/tema.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="solicitudes.html" class="volver">← Volver</a>
+
+        <a href="../../index.html" class="logo">
+            <span class="logo-icono">W</span>
+            <span>Worklink</span>
+        </a>
+    </header>
+
+    <main class="contenedor-chat">
+        <section class="chat">
+
+            <header class="chat-cabecera">
+                <div class="avatar" id="avatar-contacto">W</div>
+
+                <div class="datos-contacto">
+                    <h1 id="nombre-contacto">Conversación</h1>
+                    <p id="estado-contacto">Chat de servicio</p>
+                </div>
+
+                <span class="indicador">●</span>
+            </header>
+
+            <div class="info-solicitud">
+                <span>Solicitud de servicio</span>
+                <strong id="numero-solicitud">Cargando...</strong>
+            </div>
+
+            <div id="aviso" class="aviso oculto" role="status"></div>
+
+            <div id="mensajes" class="mensajes" aria-live="polite">
+                <div class="cargando">Cargando conversación...</div>
+            </div>
+
+            <form id="formulario-chat" class="formulario-chat">
+                <label for="texto-mensaje" class="sr-only">
+                    Escribí tu mensaje
+                </label>
+
+                <textarea
+                    id="texto-mensaje"
+                    placeholder="Escribí tu mensaje..."
+                    maxlength="2000"
+                    rows="1"
+                    required
+                ></textarea>
+
+                <button id="btn-enviar" type="submit" aria-label="Enviar mensaje">
+                    <span>Enviar</span>
+                    <span aria-hidden="true">➤</span>
+                </button>
+            </form>
+
+            <div class="pie-chat">
+                <span>Máximo 2000 caracteres por mensaje</span>
+                <span id="contador">0 / 2000</span>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../js/chat.js"></script>
+    <script src="../js/tema.js"></script>
+</body>
+</html>

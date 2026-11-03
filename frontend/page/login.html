@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Iniciá sesión en Worklink y encontrá los servicios que necesitás.">
+
+    <title>Iniciar sesión | Worklink</title>
+    <link rel="stylesheet" href="../css/tema.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="auth-page">
+
+    <header class="auth-header">
+        <a class="auth-logo" href="../../index.html">
+            Work<span>link</span>
+        </a>
+
+        <a class="back-link" href="../../index.html">
+            Volver al inicio
+        </a>
+    </header>
+
+    <main class="auth-layout">
+
+        <section class="auth-presentation">
+            <span class="auth-eyebrow">QUÉ BUENO TENERTE DE VUELTA</span>
+
+            <h1>Tu próximo proyecto comienza aquí.</h1>
+
+            <p>
+                Ingresá a tu cuenta y conectá con profesionales,
+                administrá tus servicios y mantené todo organizado
+                desde un solo lugar.
+            </p>
+
+            <img
+                class="auth-image"
+                src="../img/worklink.png"
+                alt="Worklink, conectando clientes con profesionales"
+            >
+        </section>
+
+        <section class="auth-card">
+            <div class="auth-card-heading">
+                <h2>Iniciar sesión</h2>
+                <p>Ingresá tus datos para continuar.</p>
+            </div>
+
+            <form id="form-login">
+                <div class="form-group">
+                    <label for="login-correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="login-correo"
+                        name="correo"
+                        placeholder="nombre@correo.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="login-clave">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="login-clave"
+                        name="clave"
+                        placeholder="Ingresá tu contraseña"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <button class="auth-submit" type="submit">
+                    Ingresar a mi cuenta
+                </button>
+
+                <p id="login-mensaje" class="auth-message"
+                   role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="auth-divider">
+                <span>¿Todavía no tenés cuenta?</span>
+            </div>
+
+            <a class="auth-secondary-button" href="registro.html">
+                Crear una cuenta
+            </a>
+
+            <p class="auth-terms">
+                Al continuar, utilizás la plataforma Worklink
+                conforme a sus condiciones de uso.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="auth-footer">
+        <a href="../../index.html">Worklink</a>
+        <p>Conectamos talento con oportunidades.</p>
+    </footer>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/tema.js"></script>
+</body>
+</html>

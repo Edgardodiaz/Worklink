@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestioná tu cuenta y perfil profesional en Worklink.">
+    <title>Mi perfil | Worklink</title>
+    <link rel="stylesheet" href="../css/mi-perfil.css">
+    <link rel="stylesheet" href="../css/tema.css">
+
+</head>
+<body>
+    <header class="encabezado">
+        <a href="inicio.html" class="logo">Work<span>link</span></a>
+
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="solicitudes.html">Mis solicitudes</a>
+        </nav>
+
+        <button id="btn-cerrar-sesion" class="btn-secundario" type="button">
+            Cerrar sesión
+        </button>
+    </header>
+
+    <main class="contenedor">
+        <section class="titulo-pagina">
+            <span class="etiqueta">TU CUENTA</span>
+            <h1>Mi perfil</h1>
+            <p>Administrá tus datos y decidí si también querés ofrecer servicios.</p>
+        </section>
+
+        <div id="mensaje-general" class="mensaje" role="status">
+            Cargando tu información...
+        </div>
+
+        <!-- DATOS PERSONALES -->
+        <section class="panel">
+            <div class="titulo-panel">
+                <div class="icono-panel">👤</div>
+                <div>
+                    <h2>Datos personales</h2>
+                    <p>Esta información corresponde a tu cuenta de Worklink.</p>
+                </div>
+            </div>
+
+            <div class="encabezado-perfil">
+                <div>
+                    <h2>👤 Datos personales</h2>
+                    <p>Información de tu cuenta de Worklink.</p>
+                </div>
+
+                <a href="editar-datos.html" class="btn-secundario">
+                    ✏️ Editar datos
+                </a>
+            </div>
+
+            <div class="campos-dobles datos-profesionales">
+                <div class="dato-perfil">
+                    <span>Nombre completo</span>
+                    <strong id="vista-nombre">Cargando...</strong>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Correo electrónico</span>
+                    <strong id="vista-correo">Cargando...</strong>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Teléfono</span>
+                    <strong id="vista-telefono">Cargando...</strong>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Tipo de cuenta</span>
+                    <strong id="vista-tipo-cuenta">Cargando...</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFIL PROFESIONAL -->
+        <section class="panel" id="perfil-profesional">
+            <div class="titulo-panel">
+                <div class="icono-panel">🛠️</div>
+                <div>
+                    <h2>Perfil profesional</h2>
+                    <p>Tu información y los servicios que ofrecés en Worklink.</p>
+                </div>
+            </div>
+
+            <div id="estado-perfil-profesional" class="aviso-profesional">
+                Comprobando tu perfil profesional...
+            </div>
+
+            <div id="vista-datos-profesionales" class="datos-profesionales" hidden>
+                <div class="dato-perfil">
+                    <span>Oficio o especialidad</span>
+                    <strong id="vista-titulo-profesional">—</strong>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Descripción de servicios</span>
+                    <p id="vista-descripcion-profesional">—</p>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Años de experiencia</span>
+                    <strong id="vista-experiencia-profesional">—</strong>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Tarifa base</span>
+                    <strong id="vista-tarifa-profesional">—</strong>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Departamento</span>
+                    <strong id="vista-departamento-profesional">—</strong>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Municipio</span>
+                    <strong id="vista-municipio-profesional">—</strong>
+                </div>
+
+                <div class="dato-perfil">
+                    <span>Dirección de referencia</span>
+                    <strong id="vista-direccion-profesional">—</strong>
+                </div>
+            </div>
+
+            <a href="mis-servicios.html"
+                class="btn-servicios"
+                id="btn-servicios"
+                hidden>
+                    <span>🛠️</span> Publicar y administrar servicios
+            </a>
+
+            <div id="acciones-perfil-existente" class="acciones" hidden>
+                <button class="btn-secundario"
+                        id="btn-editar-profesional"
+                        type="button">
+                    ✏️ Editar perfil profesional
+                </button>
+            </div>
+          
+            <div id="acciones-crear-profesional" class="acciones" hidden>
+                <button class="btn-principal"
+                        id="btn-crear-profesional"
+                        type="button">
+                    + Crear perfil profesional
+                </button>
+            </div>
+
+            <p id="mensaje-profesional" class="mensaje" role="status"></p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="inicio.html" class="logo">Work<span>link</span></a>
+        <p>Conectamos personas con profesionales de confianza.</p>
+        <small>© 2026 Worklink</small>
+    </footer>
+
+    <script src="../js/mi-perfil.js"></script>
+    <script src="../js/tema.js"></script>
+</body>
+</html>

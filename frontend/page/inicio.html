@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encontrá profesionales y contratá servicios en Worklink.">
+    <title>Inicio | Worklink</title>
+    <link rel="stylesheet" href="../css/tema.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+</head>
+
+<body class="home-page">
+
+    <!-- ENCABEZADO -->
+    <header class="home-header">
+        <a class="home-logo" href="inicio.html">
+            Work<span>link</span>
+        </a>
+
+        <nav class="home-nav" aria-label="Navegación principal">
+            <a class="active" href="inicio.html">Inicio</a>
+            <a href="categorias.html">Categorías</a>
+            <a href="profesionales.html">Profesionales</a>
+        </nav>
+
+        <div class="home-actions">
+            <a class="my-requests-link" href="solicitudes.html">
+                Mis solicitudes
+            </a>
+
+            <a class="profile-link" href="mi-perfil.html">
+                <span class="profile-avatar" id="avatar-usuario">U</span>
+                <span>Mi perfil</span>
+            </a>
+
+            <button class="logout-button" id="btn-cerrar-sesion" type="button">
+                Salir
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PORTADA Y BUSCADOR -->
+        <section class="home-hero">
+            <div class="hero-content">
+                <span class="eyebrow">PERSONAS QUE SABEN HACERLO</span>
+
+                <h1>
+                    Lo que necesitás,<br>
+                    <span>lo encontrás aquí.</span>
+                </h1>
+
+                <p>
+                    Conectá con profesionales de distintos oficios,
+                    compará opciones y encontrá a la persona indicada
+                    para tu próximo proyecto.
+                </p>
+
+                <form id="form-busqueda" class="search-box" role="search">
+                    <div class="search-field">
+                        <label for="buscar-servicio">¿Qué necesitás?</label>
+                        <input
+                            type="search"
+                            id="buscar-servicio"
+                            name="servicio"
+                            placeholder="Electricidad, fontanería..."
+                        >
+                    </div>
+
+                    <div class="search-field">
+                        <label for="buscar-zona">¿Dónde?</label>
+                        <input
+                            type="text"
+                            id="buscar-zona"
+                            name="zona"
+                            placeholder="Ej. Santa Ana"
+                        >
+                    </div>
+
+                    <button type="submit">Buscar</button>
+                </form>
+        
+                    <!-- INVITACIÓN A OFRECER SERVICIOS -->
+        <section class="join-banner">
+            <div>
+                <span class="eyebrow">MOSTRÁ LO QUE SABÉS HACER</span>
+                <h2>Tu talento también tiene un lugar aquí.</h2>
+                <p>
+                    Completá tu perfil profesional y comenzá a publicar
+                    los servicios que ofrecés. Podés seguir contratando
+                    los servicios de otras personas con la misma cuenta.
+                </p>
+            </div>
+
+            <a href="mi-perfil.html#perfil-profesional">
+                Completar mi perfil
+            </a>
+        </section>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="home-footer">
+        <a class="home-logo" href="inicio.html">
+            Work<span>link</span>
+        </a>
+
+        <p>Conectamos talento con oportunidades.</p>
+
+        <span>&copy; 2026 Worklink</span>
+    </footer>
+    </main>
+    <script src="../js/main.js"></script>
+    <script src="../js/tema.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+
+:root {
+    --naranja: #f47b20;
+    --naranja-oscuro: #d96514;
+    --texto: #242424;
+    --gris: #6b7280;
+    --fondo: #f8f9fb;
+    --borde: #e9e9e9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+.encabezado {
+    padding: 16px 7%;
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: white;
+    border-bottom: 1px solid var(--borde);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--naranja);
+}
+
+.encabezado nav {
+    display: flex;
+    gap: 25px;
+}
+
+.encabezado nav a {
+    color: #555;
+    font-size: 14px;
+}
+
+.encabezado nav a:hover {
+    color: var(--naranja);
+}
+
+.btn-secundario {
+    padding: 10px 16px;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    background: white;
+    cursor: pointer;
+}
+
+.contenedor {
+    width: min(1100px, 90%);
+    min-height: 65vh;
+    margin: 45px auto 70px;
+}
+
+.introduccion {
+    margin-bottom: 30px;
+}
+
+.etiqueta {
+    color: var(--naranja-oscuro);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.introduccion h1 {
+    margin: 9px 0;
+    font-size: clamp(29px, 4vw, 38px);
+}
+
+.introduccion p {
+    color: var(--gris);
+    line-height: 1.6;
+}
+
+.mensaje-general {
+    margin: 18px 0;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.pestanas {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.pestana {
+    padding: 11px 18px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: transparent;
+    color: #555;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.pestana:hover {
+    background: #fff0e4;
+}
+
+.pestana.activa {
+    background: #fff0e4;
+    color: var(--naranja-oscuro);
+    border-color: #ffddc2;
+    font-weight: 700;
+}
+
+.lista-solicitudes {
+    display: grid;
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.tarjeta-solicitud {
+    padding: 24px;
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.025);
+}
+
+.encabezado-tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.encabezado-tarjeta h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.numero-solicitud {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.estado {
+    display: inline-block;
+    padding: 7px 11px;
+    border-radius: 30px;
+    background: #f1f1f1;
+    color: #555;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.estado-pendiente {
+    background: #fff1d6;
+    color: #946200;
+}
+
+.estado-aceptada,
+.estado-completada {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.estado-rechazada,
+.estado-cancelada {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.estado-en_proceso {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.detalles-solicitud {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+}
+
+.detalle {
+    overflow-wrap: anywhere;
+}
+
+.detalle span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.detalle strong {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.descripcion-solicitud {
+    margin-top: 20px;
+    color: #555;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+.acciones-solicitud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn-accion,
+.btn-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-principal,
+.btn-aceptar {
+    background: var(--naranja);
+    color: white;
+}
+
+.btn-principal:hover,
+.btn-aceptar:hover {
+    background: var(--naranja-oscuro);
+}
+
+.btn-rechazar,
+.btn-cancelar {
+    background: white;
+    color: #b42318;
+    border-color: #f0c9c6;
+}
+
+.btn-accion:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.estado-vacio {
+    margin-top: 35px;
+    padding: 45px 20px;
+    border: 1px dashed #ddd;
+    border-radius: 16px;
+    background: white;
+    text-align: center;
+}
+
+.icono-vacio {
+    font-size: 35px;
+}
+
+.estado-vacio p {
+    color: var(--gris);
+    margin-bottom: 25px;
+}
+
+footer {
+    padding: 30px 7%;
+    border-top: 1px solid var(--borde);
+    background: white;
+    text-align: center;
+}
+
+footer p,
+footer small {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    .encabezado {
+        padding: 16px 5%;
+        flex-wrap: wrap;
+    }
+
+    .encabezado nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .contenedor {
+        width: 92%;
+        margin-top: 28px;
+    }
+
+    .encabezado-tarjeta {
+        flex-direction: column;
+    }
+
+    .detalles-solicitud {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-solicitud {
+        padding: 19px;
+    }
+
+    .acciones-solicitud {
+        flex-direction: column;
+    }
+
+    .btn-accion {
+        width: 100%;
+    }
+}
+
+/* Contenedor de botones de las solicitudes */
+.acciones-solicitud {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-borde, #e5e7eb);
+}
+
+/* Estilo general */
+.acciones-solicitud button {
+    min-height: 42px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+/* Botón abrir chat */
+.acciones-solicitud .btn-chat {
+    background: #f07832;
+    color: #ffffff;
+    border: 1px solid #f07832;
+    box-shadow: 0 2px 5px rgba(240, 120, 50, 0.15);
+}
+
+.acciones-solicitud .btn-chat:hover {
+    background: #d96120;
+    border-color: #d96120;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(240, 120, 50, 0.25);
+}
+
+/* Botón cancelar solicitud */
+.acciones-solicitud .btn-cancelar {
+    background: transparent;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.acciones-solicitud .btn-cancelar:hover {
+    background: #dc3545;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.15);
+}
+
+/* Efecto al presionar */
+.acciones-solicitud button:active {
+    transform: scale(0.97);
+}
+
+/* Accesibilidad: indicador de enfoque */
+.acciones-solicitud button:focus-visible {
+    outline: 3px solid rgba(240, 120, 50, 0.35);
+    outline-offset: 3px;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 480px) {
+    .acciones-solicitud {
+        gap: 10px;
+    }
+
+    .acciones-solicitud button {
+        flex: 1;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+}

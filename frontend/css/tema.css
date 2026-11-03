@@ -1,0 +1,1234 @@
+
+/* =========================================
+   WORKLINK | TEMAS COMPARTIDOS
+   ========================================= */
+
+/* Colores base */
+:root {
+    color-scheme: light;
+
+    --tema-fondo: #f6f7f9;
+    --tema-superficie: #ffffff;
+    --tema-superficie-2: #f1f3f6;
+    --tema-texto: #242936;
+    --tema-texto-secundario: #737b8c;
+    --tema-borde: #e5e7eb;
+    --tema-naranja: #f47721;
+    --tema-naranja-suave: #fff0e5;
+}
+
+/* Paleta oscura */
+html[data-tema="oscuro"] {
+    color-scheme: dark;
+
+    --tema-fondo: #111318;
+    --tema-superficie: #1b1e25;
+    --tema-superficie-2: #242832;
+    --tema-texto: #f1f3f5;
+    --tema-texto-secundario: #b0b7c3;
+    --tema-borde: #353b47;
+    --tema-naranja: #ff914d;
+    --tema-naranja-suave: #38271d;
+}
+
+/* Transiciones solo en los elementos principales */
+body,
+header,
+main,
+section,
+article,
+footer,
+button,
+input,
+select,
+textarea,
+a {
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
+
+html[data-tema="oscuro"] body {
+    background: var(--tema-fondo) !important;
+    color: var(--tema-texto);
+}
+
+html[data-tema="oscuro"] h1,
+html[data-tema="oscuro"] h2,
+html[data-tema="oscuro"] h3,
+html[data-tema="oscuro"] h4,
+html[data-tema="oscuro"] label,
+html[data-tema="oscuro"] .titulo-pagina,
+html[data-tema="oscuro"] .titulo-seccion {
+    color: var(--tema-texto);
+}
+
+html[data-tema="oscuro"] p,
+html[data-tema="oscuro"] small,
+html[data-tema="oscuro"] .descripcion-solicitud,
+html[data-tema="oscuro"] .ubicacion,
+html[data-tema="oscuro"] .mensaje-general {
+    color: var(--tema-texto-secundario);
+}
+
+/* No modificar indiscriminadamente todos los span:
+   algunos contienen logotipos, iconos y estados. */
+
+/* Tarjetas, paneles y formularios habituales */
+html[data-tema="oscuro"] .panel,
+html[data-tema="oscuro"] .tarjeta,
+html[data-tema="oscuro"] .tarjeta-servicio,
+html[data-tema="oscuro"] .tarjeta-solicitud,
+html[data-tema="oscuro"] .formulario,
+html[data-tema="oscuro"] .auth-card,
+html[data-tema="oscuro"] .chat,
+html[data-tema="oscuro"] .perfil-cabecera,
+html[data-tema="oscuro"] .dato-perfil,
+html[data-tema="oscuro"] .encabezado,
+html[data-tema="oscuro"] .auth-header {
+    background-color: var(--tema-superficie);
+    color: var(--tema-texto);
+    border-color: var(--tema-borde);
+}
+
+/* Campos */
+html[data-tema="oscuro"] input,
+html[data-tema="oscuro"] select,
+html[data-tema="oscuro"] textarea {
+    background-color: var(--tema-superficie-2);
+    color: var(--tema-texto);
+    border-color: var(--tema-borde);
+}
+
+html[data-tema="oscuro"] input::placeholder,
+html[data-tema="oscuro"] textarea::placeholder {
+    color: var(--tema-texto-secundario);
+}
+
+/* Botones secundarios */
+html[data-tema="oscuro"] .pestana,
+html[data-tema="oscuro"] .btn-secundario,
+html[data-tema="oscuro"] .btn-volver,
+html[data-tema="oscuro"] .auth-secondary-button,
+html[data-tema="oscuro"] .logout-button,
+html[data-tema="oscuro"] .btn-salir,
+html[data-tema="oscuro"] .clear-search-button {
+    background-color: var(--tema-superficie-2);
+    color: var(--tema-texto);
+    border-color: var(--tema-borde);
+}
+
+/* =========================================
+   PÁGINA PRINCIPAL: INICIO.CSS
+   ========================================= */
+
+html[data-tema="oscuro"] .home-page {
+    --home-orange: #ff914d;
+    --home-orange-dark: #ffab70;
+    --home-orange-light: #38271d;
+    --home-dark: #f1f3f5;
+    --home-text: #c0c5cf;
+    --home-border: #353b47;
+    --home-background: #15181e;
+
+    background: var(--tema-fondo) !important;
+    color: var(--tema-texto);
+}
+
+/* Encabezado */
+html[data-tema="oscuro"] .home-header {
+    background: rgba(27, 30, 37, 0.97);
+    border-color: var(--tema-borde);
+}
+
+html[data-tema="oscuro"] .home-logo,
+html[data-tema="oscuro"] .profile-link {
+    color: var(--tema-texto);
+}
+
+html[data-tema="oscuro"] .home-nav a,
+html[data-tema="oscuro"] .my-requests-link {
+    color: var(--tema-texto-secundario);
+}
+
+html[data-tema="oscuro"] .logout-button {
+    background: var(--tema-superficie-2);
+    color: var(--tema-texto);
+    border-color: var(--tema-borde);
+}
+
+/* Portada: elimina el degradado claro que impedía
+   que el modo oscuro cubriera toda la sección. */
+html[data-tema="oscuro"] .home-hero {
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(244, 119, 33, 0.10),
+            transparent 38%
+        ),
+        linear-gradient(135deg, #171a20, #111318 75%);
+}
+
+/* Texto de portada: contraste legible */
+html[data-tema="oscuro"] .hero-content h1 {
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] .hero-content h1 span {
+    color: #ff914d;
+}
+
+html[data-tema="oscuro"] .hero-content > p:not(.hero-note) {
+    color: #c0c5cf;
+}
+
+html[data-tema="oscuro"] .hero-content .eyebrow {
+    color: #ffab70;
+}
+
+html[data-tema="oscuro"] .hero-note {
+    color: #aeb5c1;
+}
+
+/* Buscador de la portada */
+html[data-tema="oscuro"] .search-box {
+    background: var(--tema-superficie);
+    border-color: var(--tema-borde);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+html[data-tema="oscuro"] .search-field label {
+    color: var(--tema-texto);
+}
+
+html[data-tema="oscuro"] .search-field input {
+    background: var(--tema-superficie-2);
+    color: var(--tema-texto);
+    border-color: var(--tema-borde);
+}
+
+html[data-tema="oscuro"] .search-field input::placeholder {
+    color: var(--tema-texto-secundario);
+}
+
+/* Panel del logotipo en la portada */
+html[data-tema="oscuro"] .hero-visual {
+    background: #1b1e25;
+    border-color: #49372b;
+}
+
+html[data-tema="oscuro"] .hero-visual-caption {
+    color: #c0c5cf;
+}
+
+/* Secciones */
+html[data-tema="oscuro"] .home-section {
+    background: var(--home-background);
+}
+
+html[data-tema="oscuro"] .section-heading h2,
+html[data-tema="oscuro"] .category-name,
+html[data-tema="oscuro"] .professional-card h3 {
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] .section-heading p,
+html[data-tema="oscuro"] .category-description,
+html[data-tema="oscuro"] .professional-location,
+html[data-tema="oscuro"] .professional-description,
+html[data-tema="oscuro"] .results-message {
+    color: #c0c5cf;
+}
+
+/* Tarjetas de categorías y profesionales */
+html[data-tema="oscuro"] .category-card,
+html[data-tema="oscuro"] .professional-card {
+    background: var(--tema-superficie);
+    border-color: var(--tema-borde);
+    color: var(--tema-texto);
+}
+
+html[data-tema="oscuro"] .category-icon,
+html[data-tema="oscuro"] .profile-avatar {
+    background: var(--tema-naranja-suave);
+    color: #ffab70;
+}
+
+html[data-tema="oscuro"] .professional-card a {
+    background: var(--tema-naranja-suave);
+    color: #ffb783;
+}
+
+html[data-tema="oscuro"] .professional-empty {
+    border-color: var(--tema-borde);
+    color: var(--tema-texto-secundario);
+}
+
+/* Botón para limpiar búsquedas */
+html[data-tema="oscuro"] .clear-search-button:hover {
+    color: #ffb783;
+}
+
+/* Invitación a profesionales: sección intencionalmente oscura */
+html[data-tema="oscuro"] .join-banner {
+    background: #202630;
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] .join-banner h2 {
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] .join-banner p {
+    color: #d0d5dd;
+}
+
+/* Pie de página */
+html[data-tema="oscuro"] .home-footer {
+    background: var(--tema-superficie);
+    border-color: var(--tema-borde);
+}
+
+html[data-tema="oscuro"] .home-footer p,
+html[data-tema="oscuro"] .home-footer > span {
+    color: var(--tema-texto-secundario);
+}
+
+/* =========================================
+   CHAT
+   ========================================= */
+
+html[data-tema="oscuro"] .mensajes {
+    background: var(--tema-fondo);
+    background-image: none;
+}
+
+html[data-tema="oscuro"] .burbuja {
+    background: var(--tema-superficie-2);
+    color: var(--tema-texto);
+    border-color: var(--tema-borde);
+}
+
+html[data-tema="oscuro"] .propio .burbuja {
+    background: #49301f;
+    color: #fff1e6;
+    border-color: #704322;
+}
+
+html[data-tema="oscuro"] .info-solicitud {
+    background: var(--tema-superficie-2);
+    border-color: var(--tema-borde);
+}
+
+/* Botones principales: conservar el naranja */
+html[data-tema="oscuro"] .auth-submit,
+html[data-tema="oscuro"] .btn-principal,
+html[data-tema="oscuro"] .boton-principal,
+html[data-tema="oscuro"] .search-box button,
+html[data-tema="oscuro"] .join-banner > a {
+    background: #f47721;
+    color: #ffffff;
+}
+
+/* =========================================
+   BOTÓN FLOTANTE DEL TEMA
+   ========================================= */
+
+#boton-tema {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 9999;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-width: 52px;
+    min-height: 52px;
+    padding: 12px 16px;
+
+    border: 1px solid var(--tema-borde);
+    border-radius: 999px;
+    background: var(--tema-superficie);
+    color: var(--tema-texto);
+
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.18);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#boton-tema:hover {
+    transform: translateY(-2px);
+}
+
+#boton-tema:focus-visible {
+    outline: 3px solid var(--tema-naranja);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    #boton-tema {
+        right: 14px;
+        bottom: 14px;
+        min-height: 46px;
+        padding: 10px 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body,
+    header,
+    main,
+    section,
+    article,
+    footer,
+    button,
+    input,
+    select,
+    textarea,
+    a {
+        transition: none !important;
+    }
+}
+
+
+/* CORRECCIÓN: tarjetas reales de profesionales */
+html[data-tema="oscuro"] .tarjeta-profesional {
+    background: #1b1e25 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+html[data-tema="oscuro"] .tarjeta-profesional h3 {
+    color: #ff914d !important;
+}
+
+html[data-tema="oscuro"] .tarjeta-profesional p,
+html[data-tema="oscuro"] .tarjeta-profesional .nombre-profesional {
+    color: #c0c5cf !important;
+}
+
+html[data-tema="oscuro"] .tarjeta-profesional .btn-ver-perfil {
+    background: #f47721 !important;
+    color: #ffffff !important;
+}
+
+html[data-tema="oscuro"] #estado-profesionales {
+    color: #c0c5cf !important;
+}
+
+
+/* =========================================
+   CORRECCIÓN: PIE DE PÁGINA EN MODO OSCURO
+   ========================================= */
+
+html[data-tema="oscuro"] footer,
+html[data-tema="oscuro"] .home-footer {
+    background: #1b1e25 !important;
+    color: #f1f3f5 !important;
+    border-top-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] footer p,
+html[data-tema="oscuro"] footer small,
+html[data-tema="oscuro"] footer > span,
+html[data-tema="oscuro"] .home-footer p,
+html[data-tema="oscuro"] .home-footer > span {
+    color: #b0b7c3 !important;
+}
+
+html[data-tema="oscuro"] footer .home-logo,
+html[data-tema="oscuro"] footer .logo {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] footer .home-logo span,
+html[data-tema="oscuro"] footer .logo span {
+    color: #ff914d !important;
+}
+
+/* Evitar que los botones de cambio de tema
+   hereden los estilos generales de los botones */
+html[data-tema="oscuro"] #boton-tema {
+    background: #1b1e25 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+
+/* =========================================
+   SOLICITUDES: ESTADO VACÍO EN MODO OSCURO
+   ========================================= */
+
+html[data-tema="oscuro"] .estado-vacio,
+html[data-tema="oscuro"] #estado-vacio,
+html[data-tema="oscuro"] .empty-state,
+html[data-tema="oscuro"] .estado-vacio-contenido {
+    background: #1b1e25 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .estado-vacio h2,
+html[data-tema="oscuro"] .estado-vacio h3,
+html[data-tema="oscuro"] #estado-vacio h2,
+html[data-tema="oscuro"] #estado-vacio h3,
+html[data-tema="oscuro"] .empty-state h2,
+html[data-tema="oscuro"] .empty-state h3 {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .estado-vacio p,
+html[data-tema="oscuro"] #estado-vacio p,
+html[data-tema="oscuro"] .empty-state p {
+    color: #b0b7c3 !important;
+}
+
+/* Compatibilidad con el contenedor de solicitudes */
+html[data-tema="oscuro"] #lista-solicitudes {
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] #lista-solicitudes > div:empty {
+    background: transparent;
+}
+
+/* Título y descripción de Mis solicitudes */
+html[data-tema="oscuro"] main h1,
+html[data-tema="oscuro"] main h2 {
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] main > p {
+    color: #c0c5cf;
+}
+
+
+/* CORRECCIÓN EXACTA: crear-perfil-p.html */
+
+html[data-tema="oscuro"] .nota {
+    background: #242832 !important;
+    border-color: #353b47 !important;
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .nota strong {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .nota p {
+    color: #c0c5cf !important;
+}
+
+html[data-tema="oscuro"] .boton.boton-secundario {
+    background: #242832 !important;
+    border-color: #353b47 !important;
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .boton.boton-secundario:hover {
+    background: #303541 !important;
+    border-color: #ff914d !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================
+   MI PERFIL: MEJORAR CONTRASTE EN MODO OSCURO
+   ========================================= */
+
+/* Valores de los datos personales y profesionales */
+html[data-tema="oscuro"] .dato-perfil strong,
+html[data-tema="oscuro"] .dato-perfil p {
+    color: #f1f3f5 !important;
+}
+
+/* Etiquetas: nombre, correo, teléfono, etc. */
+html[data-tema="oscuro"] .dato-perfil span {
+    color: #aeb8c8 !important;
+}
+
+/* Fondo y borde de cada tarjeta de información */
+html[data-tema="oscuro"] .dato-perfil {
+    background: #242832 !important;
+    border-color: #353b47 !important;
+}
+
+/* Texto descriptivo de los paneles */
+html[data-tema="oscuro"] .titulo-panel p,
+html[data-tema="oscuro"] .encabezado-perfil p,
+html[data-tema="oscuro"] .aviso-profesional {
+    color: #c0c5cf !important;
+}
+
+/* Encabezados de los paneles */
+html[data-tema="oscuro"] .titulo-panel h2,
+html[data-tema="oscuro"] .encabezado-perfil h2 {
+    color: #f1f3f5 !important;
+}
+
+/* Botón secundario */
+html[data-tema="oscuro"] .btn-secundario {
+    background: #242832 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+/* Mantener el naranja de los iconos */
+html[data-tema="oscuro"] .icono-panel {
+    background: #38271d !important;
+    color: #ffb783 !important;
+}
+
+
+/* Worklink: precio por cotización en modo oscuro */
+html[data-tema="oscuro"] .precio-servicio {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .tarjeta-servicio .precio-servicio {
+    color: #f1f3f5 !important;
+}
+
+/* Mantener legibles los textos de las tarjetas de servicios */
+html[data-tema="oscuro"] .tarjeta-servicio h3 {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .tarjeta-servicio p {
+    color: #c0c5cf !important;
+}
+
+
+/* =========================================
+   PERFIL PROFESIONAL: RESEÑAS EN MODO OSCURO
+   ========================================= */
+
+/* Tarjetas de reseñas */
+html[data-tema="oscuro"] .resena,
+html[data-tema="oscuro"] .tarjeta-resena,
+html[data-tema="oscuro"] .resena-card,
+html[data-tema="oscuro"] .review-card,
+html[data-tema="oscuro"] .review-item {
+    background: #1b1e25 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Nombre del cliente */
+html[data-tema="oscuro"] .resena h3,
+html[data-tema="oscuro"] .resena strong,
+html[data-tema="oscuro"] .tarjeta-resena h3,
+html[data-tema="oscuro"] .tarjeta-resena strong,
+html[data-tema="oscuro"] .resena-card h3,
+html[data-tema="oscuro"] .resena-card strong,
+html[data-tema="oscuro"] .review-card h3,
+html[data-tema="oscuro"] .review-card strong,
+html[data-tema="oscuro"] .review-item h3,
+html[data-tema="oscuro"] .review-item strong {
+    color: #f1f3f5 !important;
+}
+
+/* Comentario de la reseña */
+html[data-tema="oscuro"] .resena p,
+html[data-tema="oscuro"] .tarjeta-resena p,
+html[data-tema="oscuro"] .resena-card p,
+html[data-tema="oscuro"] .review-card p,
+html[data-tema="oscuro"] .review-item p {
+    color: #c0c5cf !important;
+}
+
+/* Fecha de la reseña */
+html[data-tema="oscuro"] .resena time,
+html[data-tema="oscuro"] .resena-card time,
+html[data-tema="oscuro"] .review-card time,
+html[data-tema="oscuro"] .fecha-resena {
+    color: #aeb7c5 !important;
+}
+
+/* Resumen de calificación */
+html[data-tema="oscuro"] .resumen-resenas,
+html[data-tema="oscuro"] .resumen-calificacion,
+html[data-tema="oscuro"] .rating-summary {
+    background: #1b1e25 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+/* Conservar las estrellas doradas */
+html[data-tema="oscuro"] .estrellas,
+html[data-tema="oscuro"] .estrellas *,
+html[data-tema="oscuro"] .estrellas-resena,
+html[data-tema="oscuro"] .rating-stars {
+    color: #ffb000 !important;
+}
+
+
+/* =========================================
+   WORKLINK: AUTENTICACIÓN EN MODO OSCURO
+   Login y registro
+   ========================================= */
+
+html[data-tema="oscuro"] .auth-page {
+    background: #111318 !important;
+    color: #f1f3f5 !important;
+}
+
+/* Encabezado y logotipo */
+html[data-tema="oscuro"] .auth-header {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .auth-logo {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .auth-logo span {
+    color: #ff914d !important;
+}
+
+html[data-tema="oscuro"] .back-link {
+    color: #c0c5cf !important;
+}
+
+/* Presentación de la izquierda */
+html[data-tema="oscuro"] .auth-presentation h1,
+html[data-tema="oscuro"] .auth-card-heading h2 {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .auth-presentation > p,
+html[data-tema="oscuro"] .auth-card-heading p {
+    color: #c0c5cf !important;
+}
+
+html[data-tema="oscuro"] .auth-eyebrow {
+    color: #ff914d !important;
+}
+
+/* Tarjeta del formulario */
+html[data-tema="oscuro"] .auth-card {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+    box-shadow: 0 12px 38px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiquetas: correo, contraseña y demás campos */
+html[data-tema="oscuro"] .auth-card .form-group label {
+    color: #f1f3f5 !important;
+}
+
+/* Campos de entrada */
+html[data-tema="oscuro"] .auth-card input,
+html[data-tema="oscuro"] .auth-card select {
+    background: #242832 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .auth-card input::placeholder {
+    color: #aeb7c5 !important;
+}
+
+html[data-tema="oscuro"] .auth-card input:focus,
+html[data-tema="oscuro"] .auth-card select:focus {
+    border-color: #ff914d !important;
+    box-shadow: 0 0 0 3px rgba(255, 145, 77, 0.15);
+}
+
+/* Botón principal naranja */
+html[data-tema="oscuro"] .auth-submit {
+    background: #f47721 !important;
+    color: #ffffff !important;
+}
+
+html[data-tema="oscuro"] .auth-submit:hover {
+    background: #d95d0b !important;
+}
+
+/* Botón para crear cuenta */
+html[data-tema="oscuro"] .auth-secondary-button {
+    background: #242832 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .auth-secondary-button:hover {
+    background: #303541 !important;
+    border-color: #ff914d !important;
+    color: #ffffff !important;
+}
+
+/* Textos secundarios y mensajes */
+html[data-tema="oscuro"] .auth-divider,
+html[data-tema="oscuro"] .auth-terms,
+html[data-tema="oscuro"] .auth-message {
+    color: #b0b7c3 !important;
+}
+
+/* Pie de página */
+html[data-tema="oscuro"] .auth-footer {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .auth-footer > a {
+    color: #ff914d !important;
+}
+
+html[data-tema="oscuro"] .auth-footer p {
+    color: #b0b7c3 !important;
+}
+
+
+/* =========================================
+   WORKLINK: AUTENTICACIÓN EN MODO OSCURO
+   Login y registro
+   ========================================= */
+
+html[data-tema="oscuro"] .auth-page {
+    background: #111318 !important;
+    color: #f1f3f5 !important;
+}
+
+/* Encabezado y logotipo */
+html[data-tema="oscuro"] .auth-header {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .auth-logo {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .auth-logo span {
+    color: #ff914d !important;
+}
+
+html[data-tema="oscuro"] .back-link {
+    color: #c0c5cf !important;
+}
+
+/* Presentación de la izquierda */
+html[data-tema="oscuro"] .auth-presentation h1,
+html[data-tema="oscuro"] .auth-card-heading h2 {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .auth-presentation > p,
+html[data-tema="oscuro"] .auth-card-heading p {
+    color: #c0c5cf !important;
+}
+
+html[data-tema="oscuro"] .auth-eyebrow {
+    color: #ff914d !important;
+}
+
+/* Tarjeta del formulario */
+html[data-tema="oscuro"] .auth-card {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+    box-shadow: 0 12px 38px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiquetas: correo, contraseña y demás campos */
+html[data-tema="oscuro"] .auth-card .form-group label {
+    color: #f1f3f5 !important;
+}
+
+/* Campos de entrada */
+html[data-tema="oscuro"] .auth-card input,
+html[data-tema="oscuro"] .auth-card select {
+    background: #242832 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .auth-card input::placeholder {
+    color: #aeb7c5 !important;
+}
+
+html[data-tema="oscuro"] .auth-card input:focus,
+html[data-tema="oscuro"] .auth-card select:focus {
+    border-color: #ff914d !important;
+    box-shadow: 0 0 0 3px rgba(255, 145, 77, 0.15);
+}
+
+/* Botón principal naranja */
+html[data-tema="oscuro"] .auth-submit {
+    background: #f47721 !important;
+    color: #ffffff !important;
+}
+
+html[data-tema="oscuro"] .auth-submit:hover {
+    background: #d95d0b !important;
+}
+
+/* Botón para crear cuenta */
+html[data-tema="oscuro"] .auth-secondary-button {
+    background: #242832 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .auth-secondary-button:hover {
+    background: #303541 !important;
+    border-color: #ff914d !important;
+    color: #ffffff !important;
+}
+
+/* Textos secundarios y mensajes */
+html[data-tema="oscuro"] .auth-divider,
+html[data-tema="oscuro"] .auth-terms,
+html[data-tema="oscuro"] .auth-message {
+    color: #b0b7c3 !important;
+}
+
+/* Pie de página */
+html[data-tema="oscuro"] .auth-footer {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .auth-footer > a {
+    color: #ff914d !important;
+}
+
+html[data-tema="oscuro"] .auth-footer p {
+    color: #b0b7c3 !important;
+}
+
+
+/* =========================================
+   INICIO PÚBLICO: CORREGIR CONTRASTE
+   ========================================= */
+
+html[data-tema="oscuro"] .home-page {
+    background: #111318 !important;
+    color: #f1f3f5 !important;
+}
+
+/* Portada */
+html[data-tema="oscuro"] .home-hero {
+    background: #111318 !important;
+}
+
+html[data-tema="oscuro"] .hero-content h1 {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .hero-content h1 span {
+    color: #ff914d !important;
+}
+
+html[data-tema="oscuro"] .eyebrow {
+    color: #ff914d !important;
+}
+
+html[data-tema="oscuro"] .hero-content > p:not(.hero-note),
+html[data-tema="oscuro"] .hero-note {
+    color: #c0c5cf !important;
+}
+
+/* Buscador */
+html[data-tema="oscuro"] .search-box {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+html[data-tema="oscuro"] .search-field label {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .search-field input {
+    background: #242832 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .search-field input::placeholder {
+    color: #aeb7c5 !important;
+}
+
+/* Panel de imagen */
+html[data-tema="oscuro"] .hero-visual {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .hero-visual-caption {
+    color: #c0c5cf !important;
+}
+
+/* Navegación */
+html[data-tema="oscuro"] .home-header {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .home-logo {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .home-logo span {
+    color: #ff914d !important;
+}
+
+html[data-tema="oscuro"] .home-nav a,
+html[data-tema="oscuro"] .my-requests-link {
+    color: #c0c5cf !important;
+}
+
+html[data-tema="oscuro"] .home-nav a:hover,
+html[data-tema="oscuro"] .home-nav a.active {
+    color: #ff914d !important;
+}
+
+/* Resto de secciones */
+html[data-tema="oscuro"] .home-section {
+    background: #111318 !important;
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .section-heading h2,
+html[data-tema="oscuro"] .category-name {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] .section-heading p,
+html[data-tema="oscuro"] .category-description {
+    color: #c0c5cf !important;
+}
+
+html[data-tema="oscuro"] .category-card {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .home-footer {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] .home-footer p,
+html[data-tema="oscuro"] .home-footer > span {
+    color: #b0b7c3 !important;
+}
+
+
+/* =========================================
+   INDEX.HTML: COMPATIBILIDAD CON LOS TEMAS
+   ========================================= */
+
+/* Portada */
+html[data-tema="oscuro"] #inicio {
+    background: #111318 !important;
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] #inicio h1 {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] #inicio > div:first-child > p {
+    color: #c0c5cf;
+}
+
+/* Buscador */
+html[data-tema="oscuro"] #inicio form {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] #inicio form label {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] #inicio form input {
+    background: #242832 !important;
+    color: #f1f3f5 !important;
+    border-color: #353b47 !important;
+}
+
+/* Imagen principal */
+html[data-tema="oscuro"] #inicio .imagen-principal {
+    background: #1b1e25;
+    border-color: #353b47;
+}
+
+
+/* Servicios */
+html[data-tema="oscuro"] #servicios {
+    background: #15181e !important;
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] #servicios h2,
+html[data-tema="oscuro"] #servicios h3 {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] #servicios > p {
+    color: #c0c5cf;
+}
+
+html[data-tema="oscuro"] #servicios article {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] #servicios article p {
+    color: #c0c5cf !important;
+}
+
+html[data-tema="oscuro"] #servicios article a {
+    color: #ff914d !important;
+}
+
+
+/* Cómo funciona */
+html[data-tema="oscuro"] #como-funciona {
+    background: #111318 !important;
+    color: #f1f3f5;
+}
+
+html[data-tema="oscuro"] #como-funciona h2,
+html[data-tema="oscuro"] #como-funciona h3 {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] #como-funciona article {
+    background: #1b1e25 !important;
+    border-color: #353b47 !important;
+}
+
+html[data-tema="oscuro"] #como-funciona article p {
+    color: #c0c5cf !important;
+}
+
+
+/* Invitación para profesionales */
+main > section[aria-labelledby="titulo-profesionales"] {
+    width: min(90%, 1180px);
+    margin: 70px auto !important;
+    padding: 45px !important;
+    border-radius: 22px;
+    box-sizing: border-box;
+}
+
+html[data-tema="oscuro"] main > section[aria-labelledby="titulo-profesionales"] {
+    background: #202630 !important;
+    color: #f1f3f5 !important;
+    border: 1px solid #353b47;
+}
+
+html[data-tema="oscuro"] #titulo-profesionales {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] main > section[aria-labelledby="titulo-profesionales"] p {
+    color: #c0c5cf !important;
+}
+
+main > section[aria-labelledby="titulo-profesionales"] a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 20px;
+    border-radius: 10px;
+    background: #f47721;
+    color: #ffffff !important;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    main > section[aria-labelledby="titulo-profesionales"] {
+        padding: 28px 22px !important;
+    }
+}
+
+
+/* Pie de página */
+html[data-tema="oscuro"] footer {
+    background: #1b1e25 !important;
+    border-top: 1px solid #353b47;
+}
+
+html[data-tema="oscuro"] footer p {
+    color: #b0b7c3 !important;
+}
+
+html[data-tema="oscuro"] footer > a {
+    color: #ff914d !important;
+}
+
+
+/* Corregir la barra superior del index en modo oscuro */
+html[data-tema="oscuro"] body > header {
+    background: #1b1e25 !important;
+    color: #f1f3f5 !important;
+    border-bottom: 1px solid #353b47 !important;
+    box-shadow: none !important;
+}
+
+html[data-tema="oscuro"] body > header > a,
+html[data-tema="oscuro"] body > header nav a,
+html[data-tema="oscuro"] body > header > div a {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] body > header > div a:last-child {
+    background: #f47721 !important;
+    color: #ffffff !important;
+}
+
+html[data-tema="oscuro"] body > header a:hover {
+    color: #ff914d !important;
+}
+
+
+/* Corregir el logo de texto del encabezado en modo oscuro */
+html[data-tema="oscuro"] body > header > a[aria-label="Worklink, página principal"] {
+    color: #f1f3f5 !important;
+    opacity: 1 !important;
+    filter: none !important;
+    text-decoration: none !important;
+}
+
+html[data-tema="oscuro"] body > header > a[aria-label="Worklink, página principal"] span:first-child {
+    color: #f1f3f5 !important;
+}
+
+html[data-tema="oscuro"] body > header > a[aria-label="Worklink, página principal"] span:last-child {
+    color: #ff7a1a !important;
+}
+
+/* Modo oscuro: campos de formulario */
+html[data-tema="oscuro"] input,
+html[data-tema="oscuro"] select,
+html[data-tema="oscuro"] textarea {
+    background-color: #232630 !important;
+    color: #ffffff !important;
+    border-color: #363c49 !important;
+}
+
+/* Campos deshabilitados */
+html[data-tema="oscuro"] input:disabled,
+html[data-tema="oscuro"] select:disabled {
+    background-color: #232630 !important;
+    color: #cbd5e1 !important;
+    opacity: 1;
+}

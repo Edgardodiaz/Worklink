@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conocé profesionales, servicios y reseñas en Worklink.">
+    <title>Perfil profesional | Worklink</title>
+    <link rel="stylesheet" href="../css/perfil_profesional.css">
+    <link rel="stylesheet" href="../css/tema.css">
+
+</head>
+<body>
+    <header class="encabezado">
+        <a href="inicio.html" class="logo">Work<span>link</span></a>
+
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="inicio.html#profesionales">Profesionales</a>
+            <a href="mi-perfil.html">Mi perfil</a>
+        </nav>
+
+        <button id="btn-volver" class="btn-volver" type="button">
+            Volver
+        </button>
+    </header>
+
+    <main class="contenedor">
+        <div id="estado-perfil" class="estado">
+            Cargando perfil profesional...
+        </div>
+
+        <section id="contenido-perfil" hidden>
+            <div class="perfil-cabecera">
+                <div id="avatar-profesional" class="avatar">W</div>
+
+                <div class="datos-principales">
+                    <span class="etiqueta">PERFIL PROFESIONAL</span>
+                    <h1 id="nombre-profesional">Profesional</h1>
+                    <h2 id="titulo-profesional"></h2>
+                    <p id="ubicacion-profesional" class="ubicacion"></p>
+                    <span id="estado-verificacion" class="verificacion"></span>
+                </div>
+            </div>
+
+            <div class="rejilla-perfil">
+                <section class="panel">
+                    <h2>Sobre el profesional</h2>
+                    <p id="descripcion-profesional"></p>
+                </section>
+
+                <aside class="panel panel-datos">
+                    <h2>Información</h2>
+
+                    <div class="dato">
+                        <span>Experiencia</span>
+                        <strong id="experiencia-profesional"></strong>
+                    </div>
+
+                    <div class="dato">
+                        <span>Tarifa base</span>
+                        <strong id="tarifa-profesional"></strong>
+                    </div>
+
+                    <div class="dato">
+                        <span>Disponibilidad</span>
+                        <strong>Disponible</strong>
+                    </div>
+                </aside>
+            </div>
+
+            <section class="seccion-servicios">
+                <div class="titulo-seccion">
+                    <div>
+                        <span class="etiqueta">LO QUE OFRECE</span>
+                        <h2>Servicios disponibles</h2>
+                    </div>
+                </div>
+
+                <div id="lista-servicios" class="lista-servicios"></div>
+                <p id="estado-servicios" class="estado"></p>
+
+                <div id="formulario-solicitud"
+                     class="panel formulario-solicitud" hidden>
+                    <h2>Solicitar servicio</h2>
+                    <p class="texto-formulario">
+                        Contale al profesional qué necesitás y dónde se realizará el trabajo.
+                    </p>
+
+                    <form id="form-solicitud">
+                        <input type="hidden" id="solicitud-id-servicio">
+
+                        <label for="solicitud-descripcion">
+                            ¿Qué trabajo necesitás?
+                        </label>
+                        <textarea
+                            id="solicitud-descripcion"
+                            rows="4"
+                            maxlength="5000"
+                            placeholder="Describí el trabajo que necesitás realizar..."
+                            required
+                        ></textarea>
+
+                        <div class="campos-dobles">
+                            <div>
+                                <label for="solicitud-departamento">Departamento</label>
+                                <input
+                                    id="solicitud-departamento"
+                                    type="text"
+                                    maxlength="100"
+                                    placeholder="Ej. Santa Ana"
+                                    required
+                                >
+                            </div>
+
+                            <div>
+                                <label for="solicitud-municipio">Municipio</label>
+                                <input
+                                    id="solicitud-municipio"
+                                    type="text"
+                                    maxlength="100"
+                                    placeholder="Ej. El Congo"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <label for="solicitud-direccion">
+                            Dirección de referencia
+                        </label>
+                        <input
+                            id="solicitud-direccion"
+                            type="text"
+                            maxlength="255"
+                            placeholder="Ej. Cerca del parque central"
+                            required
+                        >
+
+                        <label for="solicitud-fecha">Fecha preferida</label>
+                        <input id="solicitud-fecha" type="datetime-local">
+
+                        <label for="solicitud-presupuesto">
+                            Presupuesto aproximado (USD)
+                        </label>
+                        <input
+                            id="solicitud-presupuesto"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            placeholder="Ej. 30.00"
+                        >
+
+                        <p id="mensaje-solicitud" class="estado" role="status"></p>
+
+                        <div class="acciones-formulario">
+                            <button type="submit"
+                                    id="btn-enviar-solicitud"
+                                    class="btn-principal">
+                                Enviar solicitud
+                            </button>
+
+                            <button type="button"
+                                    id="btn-cancelar-solicitud"
+                                    class="btn-volver">
+                                Cancelar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Reseñas y calificaciones -->
+            <section class="seccion-resenas" id="seccion-resenas">
+                <div class="titulo-seccion">
+                    <div>
+                        <span class="etiqueta">OPINIONES DE CLIENTES</span>
+                        <h2>Reseñas y calificaciones</h2>
+                    </div>
+                </div>
+
+                <div class="panel resumen-resenas">
+                    <div class="promedio-resenas">
+                        <strong id="promedio-resenas">—</strong>
+                        <div>
+                            <div id="estrellas-promedio"
+                                 class="estrellas"
+                                 aria-label="Calificación promedio">
+                                ☆☆☆☆☆
+                            </div>
+                            <p id="total-resenas">Todavía no hay reseñas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="estado-resenas" class="estado" role="status">
+                    Cargando reseñas...
+                </p>
+
+                <div id="lista-resenas" class="lista-resenas"></div>
+            </section>
+        </section>
+
+        <section id="error-perfil" class="error-perfil" hidden>
+            <h2>No encontramos este perfil</h2>
+            <p>Puede que ya no esté disponible o que el enlace no sea válido.</p>
+            <a href="inicio.html" class="btn-principal">Ver profesionales</a>
+        </section>
+    </main>
+
+    <footer>
+        <a href="inicio.html" class="logo">Work<span>link</span></a>
+        <p>Conectamos personas con profesionales de confianza.</p>
+        <small>© 2026 Worklink</small>
+    </footer>
+
+    <script src="../js/perfil_profesional.js"></script>
+    <script src="../js/tema.js"></script>
+    <script src="../js/.js"></script>
+</body>
+</html>

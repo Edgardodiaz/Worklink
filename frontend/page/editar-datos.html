@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar datos | Worklink</title>
+    <link rel="stylesheet" href="../css/mi-perfil.css">
+    <link rel="stylesheet" href="../css/tema.css">
+</head>
+<body>
+    <header class="encabezado">
+        <a href="inicio.html" class="logo">Work<span>link</span></a>
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="mi-perfil.html">Mi perfil</a>
+        </nav>
+        <button id="btn-cerrar-sesion" class="btn-secundario" type="button">
+            Cerrar sesión
+        </button>
+    </header>
+
+    <main class="contenedor">
+        <section class="titulo-pagina">
+            <span class="etiqueta">CONFIGURACIÓN DE CUENTA</span>
+            <h1>Editar datos personales</h1>
+            <p>Actualizá tu información y guardá los cambios en tu cuenta.</p>
+        </section>
+
+        <section class="panel">
+            <div id="mensaje-general" class="mensaje" role="status">
+                Cargando tus datos...
+            </div>
+
+            <form id="form-editar-datos">
+                <div class="campos-dobles">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text"
+                               maxlength="80" autocomplete="given-name" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellido">Apellido</label>
+                        <input id="apellido" name="apellido" type="text"
+                               maxlength="80" autocomplete="family-name" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input id="correo" name="correo" type="email"
+                           maxlength="150" autocomplete="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono (opcional)</label>
+                    <input id="telefono" name="telefono" type="tel"
+                           maxlength="20" autocomplete="tel">
+                </div>
+
+                <div class="acciones">
+                    <button class="btn-principal" id="btn-guardar" type="submit">
+                        Guardar cambios
+                    </button>
+                    <a href="mi-perfil.html" class="btn-secundario">
+                        Cancelar
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <a href="inicio.html" class="logo">Work<span>link</span></a>
+        <p>Conectamos personas con profesionales de confianza.</p>
+        <small>© 2026 Worklink</small>
+    </footer>
+
+    <script src="../js/editar-datos.js"></script>
+    <script src="../js/tema.js"></script>
+</body>
+</html>

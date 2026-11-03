@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publicá y administrá tus servicios en Worklink.">
+
+    <title>Mis servicios | Worklink</title>
+    <link rel="stylesheet" href="../css/tema.css">
+    <link rel="stylesheet" href="../css/mis-servicios.css">
+    <script src="../js/mis-servicios.js" defer></script>
+</head>
+<body>
+
+    <header class="encabezado">
+        <a class="logo" href="../../index.html">
+            Work<span>link</span>
+        </a>
+
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="mi-perfil.html">Mi perfil</a>
+            <button type="button" id="btn-cerrar-sesion" class="btn-salir">
+                Cerrar sesión
+            </button>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="bienvenida">
+            <span class="etiqueta">PANEL PROFESIONAL</span>
+            <h1>Mis servicios</h1>
+            <p>
+                Publicá lo que hacés, definí tus precios y administrá
+                los servicios que ofrecés en Worklink.
+            </p>
+        </section>
+
+        <section class="panel">
+            <div class="titulo-seccion">
+                <div>
+                    <h2 id="titulo-formulario">Publicar un servicio</h2>
+                    <p>Completá la información de tu servicio.</p>
+                </div>
+            </div>
+
+            <form id="form-servicio">
+                <input type="hidden" id="id-servicio">
+
+                <div class="campo">
+                    <label for="nombre">Nombre del servicio</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        maxlength="150"
+                        placeholder="Ej. Instalación de tomacorrientes"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="id-categoria">Categoría</label>
+                    <select id="id-categoria" required>
+                        <option value="">Cargando categorías...</option>
+                    </select>
+                </div>
+
+                <div class="campo campo-completo">
+                    <label for="descripcion">Descripción</label>
+                    <textarea
+                        id="descripcion"
+                        rows="4"
+                        maxlength="5000"
+                        placeholder="Explicá qué incluye tu servicio..."
+                    ></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="tipo-precio">Forma de cobro</label>
+                    <select id="tipo-precio" required>
+                        <option value="cotizacion">Precio por cotización</option>
+                        <option value="fijo">Precio fijo</option>
+                        <option value="por_hora">Por hora</option>
+                    </select>
+                </div>
+
+                <div class="campo" id="grupo-precio">
+                    <label for="precio">Precio en dólares ($)</label>
+                    <input
+                        type="number"
+                        id="precio"
+                        min="0"
+                        max="99999999.99"
+                        step="0.01"
+                        placeholder="Ej. 25.00"
+                        disabled
+                    >
+                    <small id="ayuda-precio">
+                        El cliente deberá solicitar una cotización.
+                    </small>
+                </div>
+
+                <div class="acciones-formulario campo-completo">
+                    <button type="submit" id="btn-guardar" class="btn-principal">
+                        Publicar servicio
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btn-cancelar"
+                        class="btn-secundario"
+                        hidden
+                    >
+                        Cancelar edición
+                    </button>
+                </div>
+
+                <p id="mensaje-formulario" class="mensaje" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="seccion-listado">
+            <div class="titulo-listado">
+                <div>
+                    <h2>Servicios publicados</h2>
+                    <p>Consultá y administrá tus publicaciones.</p>
+                </div>
+
+                <button type="button" id="btn-recargar" class="btn-secundario">
+                    Actualizar lista
+                </button>
+            </div>
+
+            <p id="mensaje-listado" class="mensaje" role="status" aria-live="polite">
+                Cargando tus servicios...
+            </p>
+
+            <div id="lista-servicios" class="lista-servicios"></div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <a class="logo" href="../../index.html">
+            Work<span>link</span>
+        </a>
+        <p>Conectamos talento con oportunidades.</p>
+    </footer>
+
+    <script src="../js/tema.js"></script>
+</body>
+</html>
