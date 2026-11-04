@@ -415,3 +415,104 @@ footer small {
         flex-direction: column;
     }
 }
+
+
+/* =========================================
+   RESEÑAS - MODO CLARO
+========================================= */
+
+#lista-resenas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.tarjeta-resena {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px;
+    background: #ffffff;
+    color: #252832;
+    border: 1px solid #e5e7eb;
+    border-radius: 13px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.tarjeta-resena:hover {
+    border-color: #f47732;
+    transform: translateY(-2px);
+}
+
+.encabezado-resena {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.encabezado-resena h3 {
+    margin: 0;
+    color: #252832;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.fecha-resena {
+    color: #777777;
+    font-size: 12px;
+}
+
+.estrellas-resena {
+    color: #ffad24;
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+.comentario-resena {
+    margin: 0;
+    padding: 13px 15px;
+    background: #f5f6f8;
+    color: #333333;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+#promedio-resenas {
+    color: #252832;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+#estrellas-promedio {
+    color: #ffad24;
+    font-size: 21px;
+    letter-spacing: 3px;
+}
+
+#total-resenas,
+#estado-resenas {
+    color: #777777;
+    font-size: 14px;
+}
+
+#estado-resenas {
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    .tarjeta-resena {
+        padding: 17px;
+    }
+
+    .encabezado-resena {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

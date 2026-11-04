@@ -1232,3 +1232,104 @@ html[data-tema="oscuro"] select:disabled {
     color: #cbd5e1 !important;
     opacity: 1;
 }
+
+
+/* =========================================
+   RESEÑAS - MODO OSCURO
+========================================= */
+
+[data-tema="oscuro"] #lista-resenas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+[data-tema="oscuro"] .tarjeta-resena {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px;
+    background: #1c1f26;
+    color: #f5f5f5;
+    border: 1px solid #343943;
+    border-radius: 13px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+[data-tema="oscuro"] .tarjeta-resena:hover {
+    border-color: #f47732;
+    transform: translateY(-2px);
+}
+
+[data-tema="oscuro"] .encabezado-resena {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+[data-tema="oscuro"] .encabezado-resena h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+[data-tema="oscuro"] .fecha-resena {
+    color: #a1a1aa;
+    font-size: 12px;
+}
+
+[data-tema="oscuro"] .estrellas-resena {
+    color: #ffad24;
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+[data-tema="oscuro"] .comentario-resena {
+    margin: 0;
+    padding: 13px 15px;
+    background: #252932;
+    color: #e5e7eb;
+    border: 1px solid #343943;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+[data-tema="oscuro"] #promedio-resenas {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+[data-tema="oscuro"] #estrellas-promedio {
+    color: #ffad24;
+    font-size: 21px;
+    letter-spacing: 3px;
+}
+
+[data-tema="oscuro"] #total-resenas,
+[data-tema="oscuro"] #estado-resenas {
+    color: #a1a1aa;
+    font-size: 14px;
+}
+
+[data-tema="oscuro"] #estado-resenas {
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    [data-tema="oscuro"] .tarjeta-resena {
+        padding: 17px;
+    }
+
+    [data-tema="oscuro"] .encabezado-resena {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

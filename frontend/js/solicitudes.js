@@ -219,6 +219,19 @@ document.addEventListener("DOMContentLoaded", () => {
             );
         }
 
+                // Calificar al profesional cuando el trabajo esté completado
+        if (esCliente && solicitud.estado === "completada") {
+            agregarAccion(
+                acciones,
+                "⭐ Calificar profesional",
+                "btn-resena",
+                () => {
+                    window.location.href =
+                        `resena.html?id=${encodeURIComponent(solicitud.id_solicitud)}`;
+                }
+            );
+        }
+
         // Acciones del profesional: aceptar o rechazar
         if (
             esProfesional &&

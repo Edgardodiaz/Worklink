@@ -8,11 +8,14 @@ const verificarToken = require("./middleware/auth");
 const rutasPerfiles = require("./routers/perfiles");
 const rutasServicios = require("./routers/servicios");
 const rutasSolicitudes = require("./routers/solicitudes");
-const rutasResenias = require("./routers/resenias");
+const resenasRouter = require("./routers/resenias");
 const rutasFavoritos = require("./routers/favoritos");
 const rutasMensajes = require("./routers/mensajes");
 const billeteraRouter = require("./routers/billetera");
 require("dotenv").config();
+
+
+
 
 const app = express();
 
@@ -21,7 +24,7 @@ app.use(express.json());
 app.use("/api/perfiles", rutasPerfiles);
 app.use("/api/servicios", rutasServicios);
 app.use("/api/solicitudes", rutasSolicitudes);
-app.use("/api/resenas", rutasResenias);
+app.use("/api/resenas", resenasRouter);
 app.use("/api/favoritos", rutasFavoritos);
 app.use("/api/mensajes", rutasMensajes);
 app.use("/api/billetera", billeteraRouter);

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificar profesional | Worklink</title>
+
+    <link rel="stylesheet" href="../css/tema.css">
+    <link rel="stylesheet" href="../css/resena.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="index.html" class="logo">Work<span>link</span></a>
+        <a href="solicitudes.html" class="btn-volver">
+            ← Mis solicitudes
+        </a>
+    </header>
+
+    <main class="contenedor-resena">
+
+        <section class="tarjeta-resena">
+
+            <div class="icono-resena">⭐</div>
+
+            <p class="etiqueta">TU OPINIÓN IMPORTA</p>
+
+            <h1>Calificá el servicio</h1>
+
+            <p class="descripcion">
+                Contanos cómo fue tu experiencia con el profesional.
+                Tu opinión ayudará a otros clientes a tomar mejores decisiones.
+            </p>
+
+            <div class="informacion-solicitud">
+                <span>Solicitud</span>
+                <strong id="numero-solicitud">Cargando...</strong>
+            </div>
+
+            <form id="form-resena">
+
+                <label class="titulo-estrellas">
+                    ¿Cómo calificás el servicio?
+                </label>
+
+                <div class="estrellas" id="estrellas">
+                    <button type="button" data-valor="1" aria-label="1 estrella">★</button>
+                    <button type="button" data-valor="2" aria-label="2 estrellas">★</button>
+                    <button type="button" data-valor="3" aria-label="3 estrellas">★</button>
+                    <button type="button" data-valor="4" aria-label="4 estrellas">★</button>
+                    <button type="button" data-valor="5" aria-label="5 estrellas">★</button>
+                </div>
+
+                <p id="texto-calificacion">
+                    Seleccioná una calificación
+                </p>
+
+                <input type="hidden" id="puntuacion" value="">
+
+                <label for="comentario">
+                    Comentario <span>(opcional)</span>
+                </label>
+
+                <textarea
+                    id="comentario"
+                    maxlength="1000"
+                    placeholder="Contanos qué te pareció el servicio..."
+                    rows="5"
+                ></textarea>
+
+                <div class="contador">
+                    <span id="contador-caracteres">0</span>/1000
+                </div>
+
+                <p id="mensaje-resena" role="status"></p>
+
+                <button type="submit" id="btn-publicar" disabled>
+                    Publicar reseña
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <h2>Work<span>link</span></h2>
+        <p>Conectamos personas con profesionales de confianza.</p>
+        <small>© 2026 Worklink</small>
+    </footer>
+
+    <script src="../js/resena.js"></script>
+
+</body>
+</html>

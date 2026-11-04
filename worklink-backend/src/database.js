@@ -9,15 +9,29 @@ dotenv.config({
     path: path.resolve(__dirname, "../.env")
 });
 
-// Obtener la ruta del certificado SSL
-const rutaCertificado = path.resolve(
-    __dirname,
-    "..",
-    process.env.DB_SSL_CA
-);
+// Obtener certificado SSL
+let certificadoCA;
 
-// Leer el certificado de Aiven
-const certificadoCA = fs.readFileSync(rutaCertificado);
+if (process.env.DB_SSL_CA_BASE64) {
+    // Certificado cargado mediante variable de entorno (Render)
+    certificadoCA = Buffer.from(
+        process.env.DB_SSL_CA_BASE64,
+        "base64"
+    ).toString("utf8");
+
+} else if (process.env.DB_SSL_CA) {
+    // Certificado cargado desde archivo (entorno local)
+    const rutaCertificado = path.resolve(
+        __dirname,
+        "..",
+        process.env.DB_SSL_CA
+    );
+
+    certificadoCA = fs.readFileSync(rutaCertificado, "utf8");
+
+} else {
+    throw new Error("No se ha configurado el certificado SSL de Aiven.");
+}
 
 // Configurar conexión MySQL
 const pool = mysql.createPool({

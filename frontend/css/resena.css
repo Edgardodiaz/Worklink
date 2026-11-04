@@ -1,0 +1,304 @@
+
+/* =================================
+   WORKLINK - MÓDULO DE RESEÑAS
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--fondo, #f5f6f8);
+    color: var(--texto, #252832);
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    min-height: 70px;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--fondo-tarjeta, #ffffff);
+    border-bottom: 1px solid var(--borde, #e5e7eb);
+}
+
+.logo,
+.pie-pagina h2 {
+    color: var(--texto, #252832);
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span,
+.pie-pagina h2 span {
+    color: #f47732;
+}
+
+.btn-volver {
+    padding: 10px 16px;
+    border: 1px solid var(--borde, #e5e7eb);
+    border-radius: 9px;
+    color: var(--texto, #252832);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-volver:hover {
+    border-color: #f47732;
+    color: #f47732;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor-resena {
+    min-height: calc(100vh - 210px);
+    padding: 55px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.tarjeta-resena {
+    width: 100%;
+    max-width: 600px;
+    padding: 35px;
+    background: var(--fondo-tarjeta, #ffffff);
+    border: 1px solid var(--borde, #e5e7eb);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* PRESENTACIÓN */
+
+.icono-resena {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff2e9;
+    border-radius: 14px;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.etiqueta {
+    color: #f47732;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.tarjeta-resena h1 {
+    margin: 8px 0;
+    font-size: 29px;
+    color: var(--texto, #252832);
+}
+
+.descripcion {
+    color: var(--texto-secundario, #777);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* INFORMACIÓN DE SOLICITUD */
+
+.informacion-solicitud {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--fondo-secundario, #f5f6f8);
+    border: 1px solid var(--borde, #e5e7eb);
+    border-radius: 10px;
+    margin-bottom: 28px;
+    font-size: 14px;
+}
+
+.informacion-solicitud span {
+    color: var(--texto-secundario, #777);
+}
+
+.informacion-solicitud strong {
+    color: var(--texto, #252832);
+}
+
+/* FORMULARIO */
+
+#form-resena {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-resena label {
+    margin-bottom: 10px;
+    color: var(--texto, #252832);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#form-resena label span {
+    color: var(--texto-secundario, #888);
+    font-weight: 400;
+}
+
+/* ESTRELLAS */
+
+.titulo-estrellas {
+    text-align: center;
+}
+
+.estrellas {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin: 12px 0 5px;
+}
+
+.estrellas button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #d1d5db;
+    font-size: 43px;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.estrellas button:hover {
+    transform: scale(1.15);
+}
+
+.estrellas button.activa {
+    color: #f5a623;
+}
+
+#texto-calificacion {
+    min-height: 20px;
+    margin: 5px 0 25px;
+    text-align: center;
+    color: var(--texto-secundario, #888);
+    font-size: 13px;
+}
+
+/* COMENTARIO */
+
+#comentario {
+    width: 100%;
+    min-height: 130px;
+    padding: 14px;
+    resize: vertical;
+    border: 1px solid var(--borde, #dfe2e7);
+    border-radius: 10px;
+    background: var(--fondo, #ffffff);
+    color: var(--texto, #252832);
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+    outline: none;
+    transition: border 0.2s;
+}
+
+#comentario:focus {
+    border-color: #f47732;
+}
+
+#comentario::placeholder {
+    color: #999;
+}
+
+.contador {
+    margin-top: 7px;
+    text-align: right;
+    color: var(--texto-secundario, #888);
+    font-size: 12px;
+}
+
+/* MENSAJES */
+
+#mensaje-resena {
+    min-height: 20px;
+    margin: 12px 0;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* BOTÓN PUBLICAR */
+
+#btn-publicar {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #f47732;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-publicar:hover:not(:disabled) {
+    background: #dc6324;
+    transform: translateY(-2px);
+}
+
+#btn-publicar:disabled {
+    background: #b8b8b8;
+    cursor: not-allowed;
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    padding: 25px 15px;
+    text-align: center;
+    background: var(--fondo-tarjeta, #ffffff);
+    border-top: 1px solid var(--borde, #e5e7eb);
+}
+
+.pie-pagina h2 {
+    margin: 0 0 10px;
+}
+
+.pie-pagina p {
+    color: var(--texto-secundario, #888);
+    font-size: 13px;
+}
+
+.pie-pagina small {
+    color: var(--texto-secundario, #888);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 14px 18px;
+    }
+
+    .contenedor-resena {
+        padding: 25px 14px;
+    }
+
+    .tarjeta-resena {
+        padding: 23px 18px;
+    }
+
+    .tarjeta-resena h1 {
+        font-size: 24px;
+    }
+
+    .estrellas button {
+        font-size: 37px;
+    }
+}
