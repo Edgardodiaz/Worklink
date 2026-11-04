@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    const API = "http://localhost:3000/api";
+    const API = "https://worklink-api-5i9m.onrender.com/api";
 
     const formulario = document.getElementById("form-crear-perfil");
     const boton = document.getElementById("btn-guardar");

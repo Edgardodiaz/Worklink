@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://worklink-api-5i9m.onrender.com/api";
 
 document.addEventListener("DOMContentLoaded", () => {
     const token = localStorage.getItem("worklink_token");
