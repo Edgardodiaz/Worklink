@@ -12,6 +12,7 @@ const resenasRouter = require("./routers/resenias");
 const rutasFavoritos = require("./routers/favoritos");
 const rutasMensajes = require("./routers/mensajes");
 const billeteraRouter = require("./routers/billetera");
+const rutasUsuarios = require("./routers/usuarios");
 require("dotenv").config();
 
 
